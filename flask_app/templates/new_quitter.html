@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title> New Quitter </title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- TODO Left-Side -->
+            <div class="col-12">
+            <form action="/create_habit" method="post" class="col-xs-6">
+                <h1 class="d-flex mx-auto col-12 text-center">Congrats On Wanting To Improve Your Health!</h1>
+                    {% with messages = get_flashed_messages()  %}     <!-- declare a variable called messages -->
+                        {% if messages %}                            <!-- check if there are any messages -->
+                            {% for message in messages %}            <!-- loop through the messages -->
+                                <p class = "red text-danger">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                <div class ="d-flex justify-content-between">
+                    <a href="/dashboard" class="btn btn-primary mt-2"><strong>Dashboard</strong></a>
+                    <a href="/logout" class="btn btn-warning mt-2"><strong>Logout</strong></a>
+                </div>
+                <div class="form-group">
+                    <label for="number"><strong> Number Of Cigarettes Per Day: </strong></label>
+                    <input type="number" name="number" class="form-control"> 
+                </div>
+                <div class="form-group">
+                    <label for="cost"><strong> Per Pack $: (Round Up) </strong></label>
+                    <input type="number" name="cost" class="form-control"> 
+                </div>
+                <div class="form-group">
+                    <label for="years_smoking"><strong> Years Smoking: </strong></label>
+                    <input type="number" name="year" class="form-control">
+                <div class="form-group">
+                    <label for="radio"><strong> Method: </strong></label>
+                    <br>
+                    <input type="radio" name="method" value="4 Weeks" id="4_week" required>
+                    <label for="4 Weeks">4 Weeks</label>
+                    <input type="radio" name="method" value="Cold Turkey" id="cold_turkey">
+                    <label for="Cold Turkey">Cold Turkey</label>
+                <div class="form-group">
+                    <label for="reasons"><strong> For Qutting: </strong></label>
+                    <textarea name="why" id="why" cols="20" rows="5" class="form-control"></textarea> 
+                </div>
+            </div>
+            <!-- TODO Right Side -->
+            <div class="col-xs-6">
+            <h6 class="d-flex mx-auto text-center text-danger justify-content-center"> * Confirm Both, Number And Method Are Correct! Cannot Edit Later, Must Create A New Quitter!!! *</h6>
+                    <button class="btn btn-success d-flex mx-auto text-center justify-content-center col-xs-6"><strong>Submit</strong></button>
+                </div>    
+            </form>
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
