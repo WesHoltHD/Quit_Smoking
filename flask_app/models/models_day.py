@@ -4,7 +4,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 
 
 #db reference
-db = "Smoke_Quitter_Final"
+db = "smoke_quitter_final"
 
 #Class - Reference
 class Day:

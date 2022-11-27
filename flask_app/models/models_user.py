@@ -6,7 +6,7 @@ bcrypt = Bcrypt(app)
 from flask_app.config.mysqlconnection import connectToMySQL
 
 #Database Schema Reference
-db = 'Smoke_Quitter_Final'
+db = 'smoke_quitter_final'
 
 #Class Reference w/ keys
 class User:
