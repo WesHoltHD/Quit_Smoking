@@ -48,7 +48,9 @@
     <br>
     {% endif %}
 
-    {% if day.day_num <= 7 %}
+    {% if habits.method == "Cold Turkey"  %}
+
+    {% elif day.day_num <= 7 %}
     <p class="d-flex mx-auto col-12 text-center justify-content-center">You're Allowed To Smoke 75% Of Your Typical</p>
     {% elif day.day_num <=14 %}
     <p class="d-flex mx-auto col-12 text-center justify-content-center">You're Allowed To Smoke 50% Of Your Typical</p>
